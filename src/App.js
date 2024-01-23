@@ -25,6 +25,7 @@ function App() {
   return (
     <div className="app">
       <FriendListSidebar />
+      <FormSplitBill/>
     </div>
   );
 }
@@ -99,10 +100,15 @@ const FormSplitBill = () => {
       <input type="text" id="yourExpense" />
 
       <label for="friendExpense">🧑‍🤝‍🧑 Clark's expense</label>
-      <input type="text" id="friendExpense" />
+      <input type="text" id="friendExpense" disabled />
 
       <label for="userPaying">🤑 Who is paying the bill?</label>
-      <input type="text" id="userPaying" />
+      <select id="userPaying">
+        <option value={'you'}>You</option>
+        <option value={'clarke'}>Clark</option>
+      </select>
+
+      <Button>Split bill</Button>
     </form>
   )
 }
